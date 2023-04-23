@@ -21,7 +21,7 @@ body {
 }
 
 nav {
-  background-color: #f6f6f6;
+  background-color: #1a1a1a;
   color: #1a1a1a;
   display: flex;
   align-items: center;
@@ -36,6 +36,12 @@ main {
   flex-direction: column;
 }
 
+.g_id_signin {
+  position: absolute;
+}
+
 .right {
-  margin-left: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
 }
