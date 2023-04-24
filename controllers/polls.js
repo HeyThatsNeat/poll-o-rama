@@ -16,6 +16,12 @@ function index(req, res) {
     })
 }
 
+function newPoll(req, res) {
+    res.render('polls/new', {
+        title: "Create Poll"
+    })
+}
+
 function create(req, res) {
     req.body.owner = req.user.profile._id
     Poll.create(req.body)
@@ -31,4 +37,5 @@ function create(req, res) {
 export {
     index,
     create,
+    newPoll as new,
 }

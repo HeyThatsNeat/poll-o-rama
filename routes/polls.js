@@ -6,6 +6,8 @@ const router = Router()
 
 // GET localhost:3000/polls
 router.get('/', pollsCtrl.index)
+// GET localhost:3000/polls
+router.get('/new', pollsCtrl.new)
 
 router.post('/', isLoggedIn, pollsCtrl.create)
 
