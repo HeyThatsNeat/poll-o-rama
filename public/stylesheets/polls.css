@@ -29,6 +29,10 @@ html {
     min-height: 60px;
   }
 
+h2 {
+  text-align: center;
+}
+
 img {
   position: absolute;
   left: 125px;
