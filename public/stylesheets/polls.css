@@ -85,3 +85,35 @@ html {
       cursor: pointer;
       border-radius: 5px;
   }
+
+.pollfile-side-bar {
+  height: calc(100% - 66px); /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 66px; /* Stay at the top */
+  left: 0;
+  background-color: #fdf3d3; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+  border-right-style: solid;
+  border-top-style: solid;
+  border-bottom-style: solid;
+}
+
+.sidebar {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidebar:hover {
+  color: #f1f1f1;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar {font-size: 18px;}
+}
