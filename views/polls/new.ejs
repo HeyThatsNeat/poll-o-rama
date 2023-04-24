@@ -3,22 +3,21 @@
 <%- include('../partials/polls-nav.ejs') %>
 
 
-    <main>
-        <h1>Create Poll</h1>
-        <form id="new-form" action="/polls/new" method="POST">
-          <label for="question-input">Question:</label>
-          <input type="text" name="question" id="question-input">
-          <label for="answer1-input">answer 1:</label>
-          <input type="text" name="answer1" id="answer1-input">
-          <label for="answer2-input">answer 2:</label>
-          <input type="text" name="answer2" id="answer2-input">
-          <label for="answer3-input">answer 3:</label>
-          <input type="text" name="answer3" id="answer3-input">
-          <label for="answer4-input">answer 4:</label>
-          <input type="text" name="answer4" id="answer4-input">
-          
-          <button type="submit">Add Poll</button>
-        </form>
-      </main>
+<main>
+    <h1>Create Poll</h1>
+    <form id="new-form" action="/polls" method="POST">
+        <label for="question-input">Question:</label>
+        <input type="text" name="question" id="question-input">
+        <label for="answer1-input">answer 1:</label>
+        <input type="text" name="answer1" id="answer1-input">
+        <label for="answer2-input">answer 2:</label>
+        <input type="text" name="answer2" id="answer2-input">
+        <label for="answer3-input">answer 3:</label>
+        <input type="text" name="answer3" id="answer3-input">
+        <label for="answer4-input">answer 4:</label>
+        <input type="text" name="answer4" id="answer4-input">  
+        <button type="submit">Add Poll</button>
+    </form>
+</main>
 
 <%- include('../partials/footer.ejs') %>

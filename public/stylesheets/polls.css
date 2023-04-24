@@ -54,6 +54,19 @@ img {
     color: #293845;
   }
 
+.create-poll-link {
+  position: absolute;
+  left: 46%;
+  top: 9px;
+  font-size: 130%;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: #e9a2ad;
+  padding: 8px 12px;
+  border-radius: 5px;
+  color: #293845;
+}
+
   .polls-link {
     position: absolute;
     right: 1%;
@@ -90,7 +103,7 @@ a[href="/auth/logout"] {
   top: 9px;
 }
   
-  button[type="submit"] {
+button[type="submit"] {
     position: absolute;
     background-color: #555;
     color: white;
