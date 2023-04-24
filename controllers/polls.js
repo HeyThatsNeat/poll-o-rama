@@ -7,7 +7,7 @@ function index(req, res) {
         console.log(polls);
         res.render('polls/index', {
             polls,
-            title: "🌮"
+            title: "polls"
         })
     })
     .catch(error => {
