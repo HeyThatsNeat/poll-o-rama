@@ -40,6 +40,18 @@ html {
     border-radius: 5px;
     color: #293845;
   }
+
+  .polls-link {
+    position: relative;
+    left: 91.5%;
+    font-size: 140%;
+    font-weight: 600;
+    text-decoration: none;
+    background-color: #e9a2ad;
+    padding: 8px 12px;
+    border-radius: 5px;
+    color: #293845;
+  }
   
   main {
     display: flex;
