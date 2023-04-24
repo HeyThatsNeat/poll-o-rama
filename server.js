@@ -21,6 +21,7 @@ import'./config/passport.js'
 // import routes
 import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
+import { router as pollsRouter } from './routes/polls.js'
 
 // create the express app
 const app = express()
@@ -29,7 +30,6 @@ const app = express()
 app.set('view engine', 'ejs')
 
 // basic middleware
-app.use(methodOverride('_method'))
 app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -38,6 +38,7 @@ app.use(
     path.join(path.dirname(fileURLToPath(import.meta.url)), 'public')
   )
 )
+app.use(methodOverride('_method'))
 
 // session middleware
 app.use(
@@ -61,6 +62,7 @@ app.use(passDataToView)
 // mount imported routes
 app.use('/', indexRouter)
 app.use('/auth', authRouter)
+app.use('/polls', pollsRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
