@@ -42,9 +42,9 @@ html {
   }
 
   .polls-link {
-    position: relative;
-    left: 91.5%;
-    font-size: 140%;
+    position: absolute;
+    right: 1%;
+    font-size: 130%;
     font-weight: 600;
     text-decoration: none;
     background-color: #e9a2ad;
@@ -70,20 +70,24 @@ html {
     top: 50%;
   }
   
-  a[href="/auth/logout"] {
-    position: absolute;
-    left: 4%;
-    top: 1%;
-  }
+a[href="/auth/logout"] {
+  position: fixed;
+  display: inline-block;
+  left: 10px;
+  top: 9px;
+}
   
   button[type="submit"] {
-      background-color: #555;
-      color: white;
-      font-size: 16px;
-      padding: 12px 24px;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
+    position: absolute;
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    left: 0;
+    top: 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
   }
 
 .pollfile-side-bar {
@@ -111,6 +115,11 @@ html {
 
 .sidebar:hover {
   color: #e9a2ad;
+}
+
+#to-the-top {
+  position: absolute;
+  bottom: 0;
 }
 
 @media screen and (max-height: 450px) {
