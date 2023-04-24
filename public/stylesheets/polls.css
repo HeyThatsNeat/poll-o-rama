@@ -21,12 +21,24 @@ html {
   }
   
   nav {
-    background-color: #1a1a1a;
+    background-color: #f6f6f6;
     color: #1a1a1a;
     display: flex;
     align-items: center;
     padding: 10px;
     min-height: 60px;
+  }
+
+  .pollfile-link {
+    position: relative;
+    left: 93.5%;
+    font-size: 140%;
+    font-weight: 600;
+    text-decoration: none;
+    background-color: #e9a2ad;
+    padding: 8px 12px;
+    border-radius: 5px;
+    color: rgb(50, 50, 50);
   }
   
   main {
@@ -49,7 +61,7 @@ html {
   a[href="/auth/logout"] {
     position: absolute;
     left: 4%;
-    top: 2%;
+    top: 1%;
   }
   
   button[type="submit"] {
