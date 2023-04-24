@@ -47,15 +47,21 @@ main {
 }
 
 a[href="/auth/logout"] {
-  position: absolute;
+  position: fixed;
+  display: inline-block;
+  left: 10px;
+  top: 9px;
 }
-
-button[type="submit"] {
+  
+  button[type="submit"] {
+    position: absolute;
     background-color: #555;
     color: white;
     font-size: 16px;
     padding: 12px 24px;
+    left: 0;
+    top: 0;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-}
+  }
