@@ -29,6 +29,15 @@ html {
     min-height: 60px;
   }
 
+img {
+  position: absolute;
+  left: 125px;
+  top: 9px;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+
   .pollfile-link {
     position: absolute;
     right: 1%;
