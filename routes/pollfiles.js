@@ -6,6 +6,8 @@ const router = Router()
 
 router.get('/', pollfilesCtrl.index)
 
+router.get('/pollfiles')
+
 export {
     router,
 }

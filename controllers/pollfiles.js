@@ -1,7 +1,8 @@
 import { Profile } from "../models/profile.js";
+import { Poll } from "../models/poll.js"
 
 function index(req, res) {
-    Profile.find({})
+    Profile.find({owner: req.user.profile._id})
     .populate('polls')
     .then(profiles => {
         console.log(profiles);
@@ -16,6 +17,19 @@ function index(req, res) {
     })
 }
 
+function create(req, res) {
+    req.body.owner = req.user.profile._id
+    Poll.create(req.body)
+    .then(poll => {
+        res.redirect('/polls')
+    })
+    .catch(error => {
+        console.log(error)
+        res.redirect('/')
+    })
+}
+
 export {
-    index
+    index,
+    create,
 }
