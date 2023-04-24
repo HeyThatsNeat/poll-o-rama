@@ -6,18 +6,29 @@
 <main>
     <h1><%= title %></h1>
     <form id="new-form" action="/polls" method="POST">
+      <div>
         <label for="question-input">Question:</label>
-        <input type="text" name="question" id="question-input">
-        <label for="answer1-input">answer 1:</label>
-        <input type="text" name="answer1" id="answer1-input">
-        <label for="answer2-input">answer 2:</label>
-        <input type="text" name="answer2" id="answer2-input">
-        <label for="answer3-input">answer 3:</label>
-        <input type="text" name="answer3" id="answer3-input">
-        <label for="answer4-input">answer 4:</label>
-        <input type="text" name="answer4" id="answer4-input">  
-        <button type="submit" id="add-poll-button">Add Poll</button>
+        <span id="question-input" class="textarea" name="question" role="textbox" contenteditable></span>
+      </div>
+      <div>
+        <label for="answer1-input">Answer 1:</label>
+        <span id="answer1-input" class="textarea" name="answer1" role="textbox" contenteditable></span>
+      </div>
+      <div>
+        <label for="answer2-input">Answer 2:</label>
+        <span id="answer2-input" class="textarea" name="answer2" role="textbox" contenteditable></span>
+      </div>
+      <div>
+        <label for="answer3-input">Answer 3:</label>
+        <span id="answer3-input" class="textarea" name="answer3" role="textbox" contenteditable></span>
+      </div>
+      <div>
+        <label for="answer4-input">Answer 4:</label>
+        <span id="answer4-input" class="textarea" name="answer4" role="textbox" contenteditable></span>
+      </div>
+      <button type="submit" id="add-poll-button">Add Poll</button>
     </form>
-</main>
+  </main>
+  
 
 <%- include('../partials/footer.ejs') %>

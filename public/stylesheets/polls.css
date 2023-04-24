@@ -117,13 +117,62 @@ button[type="submit"] {
   }
 
 #add-poll-button {
-  position: absolute;
-  left: 46%;
-  top: 800px;
+  position: relative;
+  left: 350px;
+  top: 0px;
   background-color: #fdf3d3;
   color: #293845;
   font-size: 130%;
   font-weight: 600;
+  margin-top: 10px;
+}
+
+input {
+  display: block;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  resize: horizontal;
+  white-space: pre-wrap;
+}
+
+div {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+label {
+  flex-basis: 120px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+
+.textarea {
+  display: block;
+  width: 625px;
+  overflow: hidden;
+  resize: both;
+  min-height: 40px;
+  line-height: 20px;
+  max-width: 625px;
+  background-color: #fdf3d3;
+  border-style: solid;
+  border-color: #293845;
+  border-width: 3px;
+  margin-bottom: 20px;
+  overflow-y: auto;
+}
+
+.textarea[contenteditable]:empty::before {
+  content: "Text Here";
+  color: gray;
+}
+
+#new-form {
+  position: relative;
+  top: 50px;
+  right: 50px;
 }
 
 .pollfile-side-bar {
