@@ -213,6 +213,12 @@ label {
   bottom: 0;
 }
 
+#to-the-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
 @media screen and (max-height: 450px) {
   .sidebar {padding-top: 15px;}
   .sidebar {font-size: 18px;}
