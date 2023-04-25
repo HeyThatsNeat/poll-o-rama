@@ -177,7 +177,7 @@ label {
 
 .pollfile-side-bar {
   height: calc(100% - 60px); /* Full-height: remove this if you want "auto" height */
-  width: 160px; /* Set the width of the sidebar */
+  width: 15%; /* Set the width of the sidebar 160px default*/
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
   z-index: 1; /* Stay on top */
   top: 60px; /* Stay at the top */
@@ -195,11 +195,17 @@ label {
   text-decoration: none;
   font-size: 25px;
   color: #818181;
-  display: block;
+  display: flex;
 }
 
 .sidebar:hover {
   color: #e9a2ad;
+}
+
+#create-poll {
+  position: absolute;
+  top: 150px;
+  left: 0px;
 }
 
 #to-the-top {
