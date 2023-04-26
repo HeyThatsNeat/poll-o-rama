@@ -8,11 +8,39 @@
 <div class="poll-on-index-page">
     <% polls.forEach((poll) => { %>
         <div class="poll-on-index-page-content">
-            <p class="poll-question-content"><span>question: </span><%= poll.question %></p>
-            <p class="answer1"><span>answer1: </span><%= poll.answer1 %></p>
-            <p class="answer2"><span>answer2: </span><%= poll.answer2 %></p>
-            <p class="answer3"><span>answer3: </span><%= poll.answer3 %></p>
-            <p class="answer4"><span>answer4: </span><%= poll.answer4 %></p>
+            <p class="poll-question-content">
+                <span>question: </span>
+                <%= poll.question %>
+            </p>
+            <input type="radio" id="poll-question-input" name="pollQuestionInput" value="poll-question-input">
+            <label for="answer1-input">
+                <p class="answer1">
+                    <span>answer1: </span>
+                    <%= poll.answer1 %>
+                </p>
+            </label>
+            <input type="radio" id="answer1-input" name="answer1" value="answer1-input">
+            <label for="answer2-input">
+                <p class="answer2">
+                    <span>answer2: </span>
+                    <%= poll.answer2 %>
+                </p>
+            </label>
+            <input type="radio" id="answer2-input" name="answer2" value="answer2-input">
+            <label for="answer3-input">
+                <p class="answer3">
+                    <span>answer3: </span>
+                    <%= poll.answer3 %>
+                </p>
+            </label>
+            <input type="radio" id="answer3-input" name="answer3" value="answer3-input">
+            <label for="answer4-input">
+                <p class="answer4">
+                    <span>answer4: </span>
+                    <%= poll.answer4 %>
+                </p>
+            </label>
+            <input type="radio" id="answer4-input" name="answer4" value="answer4-input">
         </div>
     <% }) %>
 </div>

@@ -127,26 +127,17 @@ button[type="submit"] {
   margin-top: 10px;
 }
 
-input {
-  display: block;
-  box-sizing: border-box;
-  word-wrap: break-word;
-  resize: horizontal;
-  white-space: pre-wrap;
-}
-
 div {
   display: flex;
   align-items: flex-start;
   margin-bottom: 20px;
 }
 
-label {
+.new-label {
   flex-basis: 120px;
   text-align: right;
   margin-right: 10px;
 }
-
 
 textarea {
   display: block;
@@ -284,6 +275,10 @@ textarea {
   object-fit: contain;
   word-wrap: break-word;
   text-align: start;
+}
+
+input {
+  
 }
 
 span {
