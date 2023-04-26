@@ -12,29 +12,29 @@
                 <span>question: </span>
                 <%= poll.question %>
             </p>
-            <input class="radio" type="radio" id="answer1-input" name="answerRadio" value="answer1-input">
-            <label class="answer1" for="answer1-input">
+            <input class="radio" type="radio" id="answer1-input-<%= poll.id %>" name="answerRadio-<%= poll.id %>" value="<%= poll.answer1 %>">
+            <label class="answer1" for="answer1-input-<%= poll.id %>">
                 <p class="answer1">
                     <span>answer1: </span>
                     <%= poll.answer1 %>
                 </p>
             </label>
-            <input class="radio" type="radio" id="answer2-input" name="answerRadio" value="answer2-input">
-            <label class="answer2" for="answer2-input">
+            <input class="radio" type="radio" id="answer2-input-<%= poll.id %>" name="answerRadio-<%= poll.id %>" value="<%= poll.answer2 %>">
+            <label class="answer2" for="answer2-input-<%= poll.id %>">
                 <p class="answer2">
                     <span>answer2: </span>
                     <%= poll.answer2 %>
                 </p>
             </label>
-            <input class="radio" type="radio" id="answer3-input" name="answerRadio" value="answer3-input">
-            <label class="answer3" for="answer3-input">
+            <input class="radio" type="radio" id="answer3-input-<%= poll.id %>" name="answerRadio-<%= poll.id %>" value="<%= poll.answer3 %>">
+            <label class="answer3" for="answer3-input-<%= poll.id %>">
                 <p class="answer3">
                     <span>answer3: </span>
                     <%= poll.answer3 %>
                 </p>
             </label>
-            <input class="radio" type="radio" id="answer4-input" name="answerRadio" value="answer4-input">
-            <label class="answer4" for="answer4-input">
+            <input class="radio" type="radio" id="answer4-input-<%= poll.id %>" name="answerRadio-<%= poll.id %>" value="<%= poll.answer4 %>">
+            <label class="answer4" for="answer4-input-<%= poll.id %>">
                 <p class="answer4">
                     <span>answer4: </span>
                     <%= poll.answer4 %>
@@ -48,10 +48,3 @@
     </a>
     
     <%- include('../partials/footer.ejs') %>
-    
-    <!-- <ul>
-        <li><input type="radio" name="answer" id="answer1" value="1"><label for="answer1" id="label1"></label></li>
-        <li><input type="radio" name="answer" id="answer2" value="2"><label for="answer2" id="label2"></label></li>
-        <li><input type="radio" name="answer" id="answer3" value="3"><label for="answer3" id="label3"></label></li>
-        <li><input type="radio" name="answer" id="answer4" value="4"><label for="answer4" id="label4"></label></li>
-    </ul> -->
