@@ -207,6 +207,12 @@ textarea {
   width: 100%;
 }
 
+.radio {
+  position: relative;
+  top: 35px;
+  left: 30px
+}
+
 .poll-on-index-page {
   display: flex;
   flex-direction: column;
@@ -275,10 +281,6 @@ textarea {
   object-fit: contain;
   word-wrap: break-word;
   text-align: start;
-}
-
-input {
-  
 }
 
 span {
