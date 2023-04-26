@@ -17,19 +17,19 @@ function index(req, res) {
     })
 }
 
-function create(req, res) {
-    req.body.owner = req.user.profile._id
-    Poll.create(req.body)
-    .then(poll => {
-        res.redirect('/polls')
-    })
-    .catch(error => {
-        console.log(error)
-        res.redirect('/')
-    })
-}
+// function create(req, res) {
+//     req.body.owner = req.user.profile._id
+//     Poll.create(req.body)
+//     .then(poll => {
+//         res.redirect('/polls')
+//     })
+//     .catch(error => {
+//         console.log(error)
+//         res.redirect('/')
+//     })
+// }
 
 export {
     index,
-    create,
+    // create,
 }

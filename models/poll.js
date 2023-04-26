@@ -10,10 +10,13 @@ const responseSchema = new Schema({
 })
 
 const pollSchema = new Schema({
-    name: String,
+    question: String,
+    answer1: String,
+    answer2: String,
+    answer3: String,
+    answer4: String,
     answered: Boolean,
     owner: { type: Schema.Types.ObjectId, ref: 'Profile' },
-    pollQuestion: String,
     responses: [responseSchema],
 }, {
     timestamps: true,

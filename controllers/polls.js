@@ -1,13 +1,13 @@
+import { name } from "ejs";
 import { Poll } from "../models/poll.js"
 
 function index(req, res) {
     Poll.find({})
     .populate('owner')
     .then(polls => {
-        console.log(polls);
         res.render('polls/index', {
             polls,
-            title: "polls"
+            title: "polls",
         })
     })
     .catch(error => {
@@ -18,14 +18,16 @@ function index(req, res) {
 
 function newPoll(req, res) {
     res.render('polls/new', {
-        title: "Create Poll"
+        title: "Create Poll",
     })
 }
 
 function create(req, res) {
+    console.log("REQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ",req.user)
     req.body.owner = req.user.profile._id
     Poll.create(req.body)
     .then(poll => {
+        console.log("RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR",req.body)
         res.redirect('/polls')
     })
     .catch(error => {

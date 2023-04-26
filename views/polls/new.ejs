@@ -8,23 +8,28 @@
     <form id="new-form" action="/polls" method="POST">
       <div>
         <label for="question-input">Question:</label>
-        <span id="question-input" class="textarea" name="question" role="textbox" contenteditable></span>
+        <textarea id="question-input" name="question"
+          rows="9" cols="80"></textarea>
       </div>
       <div>
         <label for="answer1-input">Answer 1:</label>
-        <span id="answer1-input" class="textarea" name="answer1" role="textbox" contenteditable></span>
+        <textarea id="answer1-input" name="answer1"
+          rows="4" cols="80"></textarea>
       </div>
       <div>
         <label for="answer2-input">Answer 2:</label>
-        <span id="answer2-input" class="textarea" name="answer2" role="textbox" contenteditable></span>
+        <textarea id="answer2-input" name="answer2"
+          rows="4" cols="80"></textarea>
       </div>
       <div>
         <label for="answer3-input">Answer 3:</label>
-        <span id="answer3-input" class="textarea" name="answer3" role="textbox" contenteditable></span>
+        <textarea id="answer3-input" name="answer3"
+          rows="4" cols="80"></textarea>
       </div>
       <div>
         <label for="answer4-input">Answer 4:</label>
-        <span id="answer4-input" class="textarea" name="answer4" role="textbox" contenteditable></span>
+        <textarea id="answer4-input" name="answer4"
+          rows="4" cols="80"></textarea>
       </div>
       <button type="submit" id="add-poll-button">Add Poll</button>
     </form>
