@@ -5,19 +5,17 @@
 <main>
     <h1>This is the Poll/index view</h1>
 </main>
-<ul>
-    <div class="poll-on-index-page">
+<div class="poll-on-index-page">
     <% polls.forEach((poll) => { %>
         <div class="poll-on-index-page-content">
-            <li>question <%= poll.question %></li>
-            <li>answer1 <%= poll.answer1 %></li>
-            <li>answer2 <%= poll.answer2 %></li>
-            <li>answer3 <%= poll.answer3 %></li>
-            <li class="answer4">answer4 <%= poll.answer4 %></li>
+            <p class="poll-question-content">question <%= poll.question %></p>
+            <p class="answer1">answer1 <%= poll.answer1 %></p>
+            <p class="answer2">answer2 <%= poll.answer2 %></p>
+            <p class="answer3">answer3 <%= poll.answer3 %></p>
+            <p class="answer4">answer4 <%= poll.answer4 %></p>
         </div>
-            <% }) %>
-        </div>
-    </ul>
+    <% }) %>
+</div>
     
     <a href="/polls/new" class="create-poll-link">Create Poll
     </a>
