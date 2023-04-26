@@ -237,7 +237,10 @@ textarea {
   flex-wrap: wrap;
   
   width: 50%;
-  background-color: rgb(191, 22, 213);
+  background-color: #fdf3d3;
+  border-style: solid;
+  border-color: #293845;
+  border-width: 3px;
   text-align: left;
 }
 
@@ -245,7 +248,7 @@ textarea {
   max-width: 87%;
   margin-bottom: 30px;
   margin-left: 30px;
-  margin-top: 20px;
+  margin-top: 30px;
   word-wrap: break-word;
   text-align: start;
 }
@@ -276,11 +279,15 @@ textarea {
 
 .answer4 {
   max-width: 87%;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   margin-left: 30px;
   object-fit: contain;
   word-wrap: break-word;
   text-align: start;
+}
+
+span {
+  font-weight: bolder;
 }
 
 @media screen and (max-height: 450px) {

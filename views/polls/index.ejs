@@ -8,11 +8,11 @@
 <div class="poll-on-index-page">
     <% polls.forEach((poll) => { %>
         <div class="poll-on-index-page-content">
-            <p class="poll-question-content">question <%= poll.question %></p>
-            <p class="answer1">answer1 <%= poll.answer1 %></p>
-            <p class="answer2">answer2 <%= poll.answer2 %></p>
-            <p class="answer3">answer3 <%= poll.answer3 %></p>
-            <p class="answer4">answer4 <%= poll.answer4 %></p>
+            <p class="poll-question-content"><span>question: </span><%= poll.question %></p>
+            <p class="answer1"><span>answer1: </span><%= poll.answer1 %></p>
+            <p class="answer2"><span>answer2: </span><%= poll.answer2 %></p>
+            <p class="answer3"><span>answer3: </span><%= poll.answer3 %></p>
+            <p class="answer4"><span>answer4: </span><%= poll.answer4 %></p>
         </div>
     <% }) %>
 </div>
