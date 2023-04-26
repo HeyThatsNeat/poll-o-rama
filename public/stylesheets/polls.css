@@ -217,14 +217,37 @@ textarea {
 }
 
 .poll-on-index-page {
-  display: block;
-  width: 200px;
-  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 10px;
   background-color: rgb(44, 161, 20);
-  position: absolute;
+  object-fit: contain;
+  /* position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
+}
+
+.poll-on-index-page-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 10px;
+  width: 50%;
+  background-color: rgb(191, 22, 213);
+  text-align: left;
+}
+
+.answer4 {
+  height: 300px;
+  max-width: 50%;
+  max-height: 300px;
+  object-fit: contain;
+  word-wrap: break-word;
+  text-align: start;
 }
 
 @media screen and (max-height: 450px) {
