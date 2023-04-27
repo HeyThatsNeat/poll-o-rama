@@ -5,12 +5,14 @@
 <main>
     <h1>This is the Poll/index view</h1>
     <% if (user?.profile.avatar) { %>
-        <div>
-            <img
-            src="<%= user.profile.avatar %>"
-            alt="<%= user.profile.name %> avatar"
-            />
-        </div>
+        <a href="/pollfiles/<%= user?.profile._id %>">
+            <div>
+                <img
+                src="<%= user.profile.avatar %>"
+                alt="<%= user.profile.name %> avatar"
+                />
+            </div>
+        </a>
     <% } %>
 </main>
 <div class="poll-on-index-page">
