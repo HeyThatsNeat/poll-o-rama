@@ -9,6 +9,7 @@ router.get('/', isLoggedIn, pollfilesCtrl.index)
 router.get('/:pollfileId', isLoggedIn, pollfilesCtrl.show)
 router.delete('/:pollfileId/:pollId', isLoggedIn, pollfilesCtrl.delete)
 router.get('/:pollfileId/:pollId/edit', isLoggedIn, pollfilesCtrl.edit)
+router.put('/:pollfileId/:pollId', isLoggedIn, pollfilesCtrl.update)
 
 
 

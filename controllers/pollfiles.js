@@ -84,9 +84,30 @@ function edit (req, res) {
     })
 }
 
+function update(req, res) {
+    req.body.owner = req.user.profile._id
+    for (let key in req.body) {
+        if (req.body[key] === '') delete req.body[key]
+    }
+    Profile.findByIdAndUpdate(req.params.pollId, req.body, {new: true})
+    .populate('polls')
+    .then(profile => {
+        Poll.findByIdAndUpdate(req.params.pollId, req.body, {new: true})
+        .then(poll => {
+            res.redirect(`/pollfiles/${req.user.profile._id}`)
+        })
+    })
+    .catch(error => {
+        console.log(error)
+        res.redirect(`/pollfiles/${req.user.profile._id}`)
+    })
+}
+
+
 export {
     index,
     show,
     deletePoll as delete,
     edit,
+    update,
 }

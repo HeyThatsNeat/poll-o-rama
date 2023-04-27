@@ -8,15 +8,15 @@
         <h2>You haven't made any polls yet!</br>Click the "Create Poll" link on the left to create one!</h2>
     <% } %>
     <% if (user?.profile.avatar) { %>
-      <a href="/pollfiles/<%= user?.profile._id %>">
-          <div>
-              <img
-              src="<%= user.profile.avatar %>"
-              alt="<%= user.profile.name %> avatar"
-              />
-          </div>
-      </a>
-  <% } %>
+        <a href="/pollfiles/<%= user?.profile._id %>">
+            <div>
+                <img
+                src="<%= user.profile.avatar %>"
+                alt="<%= user.profile.name %> avatar"
+                />
+            </div>
+        </a>
+    <% } %>
 </main>
 
 <%- include('../partials/footer.ejs') %>

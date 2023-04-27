@@ -124,11 +124,35 @@ button[type="submit"] {
     border-radius: 5px;
   }
 
+  #submit-poll-answer {
+  position: relative;
+  background-color: #e9a2ad;
+  color: #293845;
+  font-size: 70%;
+  display: block;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+  align-self: center;
+  }
+
+#index-polls-form{
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+  align-self: center;
+  flex-direction: column;
+  align-items: center;
+}
+
 #add-poll-button, #save-poll-button {
   position: relative;
   left: 350px;
   top: 0px;
-  background-color: #fdf3d3;
+  background-color: #e9a2ad;
   color: #293845;
   font-size: 130%;
   font-weight: 600;
@@ -281,7 +305,6 @@ textarea {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  
   width: 50%;
   background-color: #fdf3d3;
   border-style: solid;
