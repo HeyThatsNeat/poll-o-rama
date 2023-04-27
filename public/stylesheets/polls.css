@@ -12,6 +12,7 @@ html {
   }
   
   body {
+    position: relative;
     background-color: #e9a2ad;
     color: #293845;
     /* Use a system font, if none are available use any found sans-sarif font */
@@ -242,7 +243,7 @@ textarea {
 }
 
 #to-the-bottom {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
 }
