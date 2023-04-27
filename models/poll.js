@@ -25,5 +25,5 @@ const pollSchema = new Schema({
 const Poll = mongoose.model('Poll', pollSchema)
 
 export {
-    Poll
+    Poll,
 }
