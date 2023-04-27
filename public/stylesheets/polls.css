@@ -97,7 +97,7 @@ img {
   }
   
 a[href="/auth/logout"] {
-  position: fixed;
+  position: absolute;
   display: inline-block;
   left: 10px;
   top: 9px;
@@ -222,10 +222,18 @@ textarea {
   margin: 10px;
   background-color: rgba(44, 161, 20, 0);
   object-fit: contain;
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
+}
+
+.poll-on-profile-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 10px;
+  background-color: rgba(44, 161, 20, 0);
+  object-fit: contain;
 }
 
 .poll-on-index-page-content {

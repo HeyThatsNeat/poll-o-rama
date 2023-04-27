@@ -1,0 +1,60 @@
+<%- include('../partials/html-head.ejs') %>
+<link rel="stylesheet" href="/stylesheets/polls.css" />
+<%- include('../partials/pollfiles-nav.ejs') %>
+
+<main>
+    <h1><%= user.profile.name + "'s Polls!"%></h1>
+    <% if (!polls) {%>
+        <h2>You haven't made any polls yet!</br>Click the "Create Poll" link on the left to create one!</h2>
+    <% } %>
+    <% if (user?.profile.avatar) { %>
+        <div>
+            <img
+            src="<%= user.profile.avatar %>"
+            alt="<%= user.profile.name %> avatar"
+            />
+        </div>
+    <% } %>
+    <div class="poll-on-profile-page">
+    <% polls.forEach((poll) => { %>
+        <div class="poll-on-index-page-content">
+            <p class="poll-question-content">
+                <span>question: </span>
+                <%= poll.question %>
+            </p>
+            <input class="radio" type="radio" id="answer1-input-<%= poll.id %>" name="answerRadio-<%= poll.id %>" value="<%= poll.answer1 %>">
+            <label class="answer1" for="answer1-input-<%= poll.id %>">
+                <p class="answer1">
+                    <span>answer1: </span>
+                    <%= poll.answer1 %>
+                </p>
+            </label>
+            <input class="radio" type="radio" id="answer2-input-<%= poll.id %>" name="answerRadio-<%= poll.id %>" value="<%= poll.answer2 %>">
+            <label class="answer2" for="answer2-input-<%= poll.id %>">
+                <p class="answer2">
+                    <span>answer2: </span>
+                    <%= poll.answer2 %>
+                </p>
+            </label>
+            <input class="radio" type="radio" id="answer3-input-<%= poll.id %>" name="answerRadio-<%= poll.id %>" value="<%= poll.answer3 %>">
+            <label class="answer3" for="answer3-input-<%= poll.id %>">
+                <p class="answer3">
+                    <span>answer3: </span>
+                    <%= poll.answer3 %>
+                </p>
+            </label>
+            <input class="radio" type="radio" id="answer4-input-<%= poll.id %>" name="answerRadio-<%= poll.id %>" value="<%= poll.answer4 %>">
+            <label class="answer4" for="answer4-input-<%= poll.id %>">
+                <p class="answer4">
+                    <span>answer4: </span>
+                    <%= poll.answer4 %>
+                </p>
+            </label>
+        </div>
+    <% }) %>
+</div>
+    
+</main>
+
+
+<%- include('../partials/footer.ejs') %>

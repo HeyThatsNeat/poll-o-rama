@@ -4,7 +4,7 @@
 
 <main>
   <h1><%= user ? "Hello, " + user.profile.name + "!" : "" %> Welcome to Poll-O-Rama!</h1>
-  <% if (user?.profile.avatar) { %>
+  <% if (user?.profile.avatar) { console.log(user.profile)%>
     <div>
       <img
         src="<%= user.profile.avatar %>"

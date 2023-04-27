@@ -2,11 +2,11 @@ import { Profile } from "../models/profile.js";
 import { Poll } from "../models/poll.js"
 
 function index(req, res) {
-    Profile.find({owner: req.user.profile._id})
+    Profile.findById(req.user.profile)
     .populate('polls')
     .then(profiles => {
-        console.log(profiles);
-        res.render('pollfiles/index', {
+        console.log("USER",req.user);
+        res.render(`pollfiles/index`, {
             profiles: profiles,
             title: "Pollfile",
         })
@@ -17,19 +17,24 @@ function index(req, res) {
     })
 }
 
-// function create(req, res) {
-//     req.body.owner = req.user.profile._id
-//     Poll.create(req.body)
-//     .then(poll => {
-//         res.redirect('/polls')
-//     })
-//     .catch(error => {
-//         console.log(error)
-//         res.redirect('/')
-//     })
-// }
+function show(req, res) {
+    Profile.findById(req.params.pollfileId)
+    .populate('polls')
+    .then(profile => {
+        console.log("MY POLLS",profile),
+        res.render('pollfiles/show', {
+            polls: profile.polls,
+            title: "Pollfile"
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect('/')
+    })
+}
 
 export {
     index,
     // create,
+    show,
 }
