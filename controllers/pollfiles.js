@@ -33,8 +33,19 @@ function show(req, res) {
     })
 }
 
+function deletePoll(req, res) {
+    Poll.findByIdAndDelete(req.params.pollfileId)
+    .then( poll => {
+        res.redirect(`/pollfiles/${user?.profile._id}`)
+    })
+    .catch(error => {
+        console.log(error)
+        res.redirect(`/pollfiles/${user?.profile._id}`)
+    })
+}
+
 export {
     index,
-    // create,
     show,
+    deletePoll as delete,
 }

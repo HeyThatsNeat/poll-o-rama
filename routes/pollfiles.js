@@ -7,6 +7,7 @@ const router = Router()
 
 router.get('/', pollfilesCtrl.index)
 router.get('/:pollfileId', pollfilesCtrl.show)
+router.delete('/:pollfileId', pollfilesCtrl.delete)
 
 
 
