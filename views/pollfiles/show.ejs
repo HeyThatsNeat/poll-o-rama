@@ -4,7 +4,8 @@
 
 <main>
     <h1><%= user.profile.name + "'s Polls!"%></h1>
-    <% if (!polls) {%>
+    <% console.log("POLLLLLLLLLLLS ON EJS VIEW", polls) %>
+    <% if (polls.length === 0 ) {%>
         <h2>You haven't made any polls yet!</br>Click the "Create Poll" link on the left to create one!</h2>
     <% } %>
     <% if (user?.profile.avatar) { %>
