@@ -34,13 +34,30 @@ function show(req, res) {
 }
 
 function deletePoll(req, res) {
-    Poll.findByIdAndDelete(req.params.pollfileId)
-    .then( poll => {
-        res.redirect(`/pollfiles/${user?.profile._id}`)
+    req.body.owner = req.user.profile._id
+    Profile.findById(req.user.profile)
+    .populate("polls")
+    .then(profile =>{
+        Poll.findById(profile.polls)
+        .then(poll => {
+                profile.polls.remove(poll)
+                profile.save()
+                .then(() => {
+                    res.redirect(`/pollfiles/${req.user.profile._id}`)
+                })
+                .catch(error => {
+                    console.log(error)
+                    res.redirect('/')
+                })
+            })
+            .catch(error => {
+                console.log(error)
+                res.redirect('/')
+            })
     })
     .catch(error => {
         console.log(error)
-        res.redirect(`/pollfiles/${user?.profile._id}`)
+        res.redirect('/')
     })
 }
 
