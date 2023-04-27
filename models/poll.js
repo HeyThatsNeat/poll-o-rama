@@ -3,7 +3,10 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const responseSchema = new Schema({
-    responseText: String,
+    responseAnswer1: [Boolean],
+    responseAnswer2: [Boolean],
+    responseAnswer3: [Boolean],
+    responseAnswer4: [Boolean],
     profile: { type: Schema.Types.ObjectId, ref: 'Profile' },
 }, {
     timestamps: true

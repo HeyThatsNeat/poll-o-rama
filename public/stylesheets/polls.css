@@ -313,6 +313,18 @@ textarea {
   text-align: left;
 }
 
+.poll-on-index-page-content-answered {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 50%;
+  background-color: #c4bb9d;
+  border-style: solid;
+  border-color: #293845;
+  border-width: 3px;
+  text-align: left;
+}
+
 .poll-question-content {
   max-width: 87%;
   margin-bottom: 30px;

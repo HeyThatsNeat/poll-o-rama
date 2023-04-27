@@ -3,7 +3,7 @@
 <%- include('../partials/polls-nav.ejs') %>
 
 <main>
-    <h1>This is the Poll/index view</h1>
+    <h1>Poll Page </h1>
     <% if (user?.profile.avatar) { %>
         <a href="/pollfiles/<%= user?.profile._id %>">
             <div>
@@ -17,9 +17,10 @@
 </main>
 <div class="poll-on-index-page">
     <% polls.forEach((poll) => { %>
+        <% if (poll.answered === false || poll.answered === undefined || poll.answered === null) {%>
         <div class="poll-on-index-page-content">
             <p class="poll-question-content">
-                <span>question: </span>
+                <span>Question: </span>
                 <%= poll.question %>
             </p>
             <input class="radio" type="radio" id="answer1-input-<%= poll.id %>" name="answerRadio-<%= poll.id %>" value="<%= poll.answer1 %>">
@@ -54,6 +55,38 @@
                 <button id="submit-poll-answer" type="submit">Submit Answer</button>
             </form>
         </div>
+        <% } else { %>
+            <div class="poll-on-index-page-content-answered">
+                <p class="poll-question-content">
+                    <span> Question: </span>
+                    <%= poll.question %>
+                </p>
+                <label class="answer1" for="answer1-input-<%= poll.id %>">
+                    <p class="answer1">
+                        <span><%= poll.responses.responseAnswer1.length %>  answer1: </span>
+                        <%= poll.answer1 %>
+                    </p>
+                </label>
+                <label class="answer2" for="answer2-input-<%= poll.id %>">
+                    <p class="answer2">
+                        <span><%= poll.responses.responseAnswer2.length %>  answer2: </span>
+                        <%= poll.answer2 %>
+                    </p>
+                </label>
+                <label class="answer3" for="answer3-input-<%= poll.id %>">
+                    <p class="answer3">
+                        <span><%= poll.responses.responseAnswer3.length %>  answer3: </span>
+                        <%= poll.answer3 %>
+                    </p>
+                </label>
+                <label class="answer4" for="answer4-input-<%= poll.id %>">
+                    <p class="answer4">
+                        <span><%= poll.responses.responseAnswer4.length %>  answer4: </span>
+                        <%= poll.answer4 %>
+                    </p>
+                </label>
+            </div>
+        <% } %>
     <% }) %>
 </div>
     
