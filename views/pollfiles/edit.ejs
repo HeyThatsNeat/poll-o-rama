@@ -6,42 +6,42 @@
 <main>
     <h1><%= title %></h1>
     <% if (user?.profile.avatar) { %>
-      <div>
-          <img
-          src="<%= user.profile.avatar %>"
-          alt="<%= user.profile.name %> avatar"
-          />
-      </div>
-  <% } %>
-    <form id="new-form" action="/polls" method="POST">
-      <div>
+        <div>
+            <img
+            src="<%= user.profile.avatar %>"
+            alt="<%= user.profile.name %> avatar"
+            />
+        </div>
+    <% } %>
+    <form id="new-form" action="/pollfiles/<%= user?.profile._id %>/<%= poll.id %>?_method=PUT" method="POST">
+    <div>
         <label class="new-label" for="question-input">Question:</label>
         <textarea id="question-input" name="question"
-          rows="9" cols="80"></textarea>
-      </div>
-      <div>
+        rows="9" cols="80"><%= poll.question %></textarea>
+    </div>
+    <div>
         <label class="new-label" for="answer1-input">Answer 1:</label>
         <textarea id="answer1-input" name="answer1"
-          rows="4" cols="80"></textarea>
-      </div>
-      <div>
+        rows="4" cols="80"><%= poll.answer1 %></textarea>
+    </div>
+    <div>
         <label class="new-label"  for="answer2-input">Answer 2:</label>
         <textarea id="answer2-input" name="answer2"
-          rows="4" cols="80"></textarea>
-      </div>
-      <div>
+        rows="4" cols="80"><%= poll.answer2 %></textarea>
+    </div>
+    <div>
         <label class="new-label"  for="answer3-input">Answer 3:</label>
         <textarea id="answer3-input" name="answer3"
-          rows="4" cols="80"></textarea>
-      </div>
-      <div>
+        rows="4" cols="80"><%= poll.answer3 %></textarea>
+    </div>
+    <div>
         <label class="new-label"  for="answer4-input">Answer 4:</label>
         <textarea id="answer4-input" name="answer4"
-          rows="4" cols="80"></textarea>
-      </div>
-      <button type="submit" id="add-poll-button">Add Poll</button>
+        rows="4" cols="80"><%= poll.answer4 %></textarea>
+    </div>
+    <button type="submit" id="save-poll-button">Save Poll</button>
     </form>
-  </main>
+</main>
   
 
 <%- include('../partials/footer.ejs') %>

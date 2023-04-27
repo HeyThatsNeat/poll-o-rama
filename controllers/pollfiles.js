@@ -35,12 +35,15 @@ function show(req, res) {
 
 function deletePoll(req, res) {
     req.body.owner = req.user.profile._id
-    Profile.findById(req.user.profile)
+    console.log("REQ.USER.PROFILEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE",req.params.pollfileId)
+    Profile.findById(req.params.pollfileId)
     .populate("polls")
     .then(profile =>{
+        console.log("REQ.PARAMS.PROFILE.POLLSzzzzzzzzzzzzzzzzzz",req.params)
         Poll.findById(profile.polls)
         .then(poll => {
-                profile.polls.remove(poll)
+                console.log("POOOOOOOOOOOOOOOOOOOLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL ----finds the first poll and deletes it. I want to find the one i clicked on and the delete it.........",poll.id)
+                profile.polls.remove(poll.id)
                 profile.save()
                 .then(() => {
                     res.redirect(`/pollfiles/${req.user.profile._id}`)
@@ -61,8 +64,29 @@ function deletePoll(req, res) {
     })
 }
 
+function edit (req, res) {
+    console.log("EDITTTTT REQ.PARAMS.POLLID",req.params.pollId)
+    Profile.findById(req.params.pollId)
+    .populate("polls")
+    .then(profile => {
+        Poll.findById(req.params.pollId)
+        .then(poll => {
+            res.render(`pollfiles/edit`, {
+                profile,
+                poll,
+                title: 'Edit Poll'
+            })
+        })
+        .catch(err => {
+            console.log(err)
+            res.redirect(`/pollfiles/${req.user.profile._id}`)
+        })
+    })
+}
+
 export {
     index,
     show,
     deletePoll as delete,
+    edit,
 }

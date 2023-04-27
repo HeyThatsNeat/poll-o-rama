@@ -116,7 +116,7 @@ button[type="submit"] {
     border-radius: 5px;
   }
 
-#add-poll-button {
+#add-poll-button, #save-poll-button {
   position: relative;
   left: 350px;
   top: 0px;
@@ -127,7 +127,7 @@ button[type="submit"] {
   margin-top: 10px;
 }
 
-#delete-form {
+form[id^="delete-form-"] {
   position: relative;
   display: flex;
   justify-content: end;
@@ -140,7 +140,7 @@ button[type="submit"] {
   padding: 0 -50px;
 }
 
-#delete-button {
+button[id^="delete-button"] {
   position: relative;
   background-color: #e9a2ad;
   color: #293845;

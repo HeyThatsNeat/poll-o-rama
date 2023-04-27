@@ -18,9 +18,9 @@
     <div class="poll-on-profile-page">
     <% polls.forEach((poll) => { %>
         <div class="poll-on-index-page-content">
-            <form id="delete-form" action="/pollfiles/<%= user?.profile._id %>?_method=DELETE" method="POST">
-                <button id="delete-button" type="submit">Delete Poll</button>
-                </form>
+            <form id="delete-form-<%= poll.id %>" <% console.log("POLLLL ID",poll.id) %> action="/pollfiles/<%= user?.profile._id %>/<%= poll.id %>?_method=DELETE" method="POST">
+            <button id="delete-button-<%= poll.id %>" type="submit">Delete Poll</button>
+            </form>
             <p class="poll-question-content">
                 <span>question: </span>
                 <%= poll.question %>
@@ -53,6 +53,7 @@
                     <%= poll.answer4 %>
                 </p>
             </label>
+            <a href="/pollfiles/<%= user?.profile._id %>/<%= poll.id %>/edit">Details</a>
         </div>
     <% }) %>
 </div>

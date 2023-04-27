@@ -5,9 +5,10 @@ import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
-router.get('/', pollfilesCtrl.index)
-router.get('/:pollfileId', pollfilesCtrl.show)
-router.delete('/:pollfileId', pollfilesCtrl.delete)
+router.get('/', isLoggedIn, pollfilesCtrl.index)
+router.get('/:pollfileId', isLoggedIn, pollfilesCtrl.show)
+router.delete('/:pollfileId/:pollId', isLoggedIn, pollfilesCtrl.delete)
+router.get('/:pollfileId/:pollId/edit', isLoggedIn, pollfilesCtrl.edit)
 
 
 
