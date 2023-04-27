@@ -33,6 +33,13 @@ h2 {
   text-align: center;
 }
 
+h4 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: center;
+}
+
 img {
   position: absolute;
   left: 125px;
@@ -125,6 +132,7 @@ button[type="submit"] {
   font-size: 130%;
   font-weight: 600;
   margin-top: 10px;
+  margin-bottom: 35px;
 }
 
 form[id^="delete-form-"] {
