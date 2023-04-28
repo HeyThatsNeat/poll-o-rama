@@ -19,6 +19,11 @@
     <% polls.forEach((poll) => { %>
         <% if ( !poll.answeredBy.includes(user.profile._id) ) {%>
             <div class="poll-on-index-page-content">
+                <% if (poll.owner.name === user.profile.name) { %>
+                    <form id="index-delete-form-<%= poll.id %>" action="/polls/<%= poll.id %>?_method=DELETE" method="POST">
+                        <button id="index-delete-button-<%= poll.id %>" type="submit">Delete Poll</button>
+                    </form>
+                <% } %>
                 <p class="poll-question-content">
                     <span>Question: </span>
                     <%= poll.question %>

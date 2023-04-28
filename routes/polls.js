@@ -9,6 +9,7 @@ router.get('/', pollsCtrl.index)
 router.get('/new', pollsCtrl.new)
 router.post('/', isLoggedIn, pollsCtrl.create)
 router.post('/:pollId', pollsCtrl.createAnswer)
+router.delete('/:pollId', isLoggedIn, pollsCtrl.delete)
 
 export {
     router,

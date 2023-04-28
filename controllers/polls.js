@@ -70,9 +70,21 @@ function createAnswer(req, res) {
     })
 }
 
+function deletePoll(req, res) {
+    Poll.findByIdAndDelete(req.params.pollId)
+        .then(poll => {
+            res.redirect('/polls')
+        })
+    .catch(err => {
+    console.log(err)
+    res.redirect('/polls')
+    })
+}
+
 export {
     index,
     create,
     newPoll as new,
     createAnswer,
+    deletePoll as delete,
 }
