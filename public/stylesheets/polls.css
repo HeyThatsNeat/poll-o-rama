@@ -233,35 +233,6 @@ button[id^="delete-button"] {
   font-weight: 600;
 }
 
-button[id^="index-delete"] {
-  position: relative;
-  background-color: #e9a2ad;
-  color: #293845;
-  display: flex;
-  justify-content: end;
-  align-items: end;
-  align-self: end;
-  align-content: end;
-  justify-items: end;
-  justify-self: end;
-  font-size: small;
-  padding: 7px 14px;
-  font-weight: 600;
-}
-
-form[id^="index-delete"] {
-  position: relative;
-  display: flex;
-  justify-content: end;
-  align-items: end;
-  left: 0%;
-  width: 99%;
-  top: 8px;
-  background-color: rgba(44, 161, 20, 0);
-  margin: 0;
-  padding: 0 -50px;
-}
-
 div {
   display: flex;
   align-items: flex-start;
@@ -344,16 +315,27 @@ textarea {
 }
 
 .radio {
+  appearance: none;
+  border-radius: 50%;
   position: relative;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #293845;
+  transition: 0.2s all linear;
   display: flex;
   justify-content: start;
   justify-self: start;
   justify-items: start;
   align-items: start;
   align-self: start;
-  top: 35px;
+  top: 35.5px;
   left: 30px
 }
+
+.radio:checked {
+  border: 5px solid #293845;
+}
+
 
 .poll-on-index-page {
   display: flex;
