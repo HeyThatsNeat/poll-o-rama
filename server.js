@@ -22,7 +22,7 @@ import'./config/passport.js'
 import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as pollsRouter } from './routes/polls.js'
-import { router as pollfilesRouter } from './routes/pollfiles.js'
+import { router as profilesRouter } from './routes/profiles.js'
 
 // create the express app
 const app = express()
@@ -64,7 +64,7 @@ app.use(passDataToView)
 app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use('/polls', pollsRouter)
-app.use('/pollfiles', pollfilesRouter)
+app.use('/profiles', profilesRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

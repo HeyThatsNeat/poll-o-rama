@@ -1,12 +1,12 @@
 <%- include('../partials/html-head.ejs') %>
 <link rel="stylesheet" href="/stylesheets/polls.css" />
 <%- include('../partials/polls-nav.ejs') %>
-
+<a href="/polls" class="polls-link-create-page">Poll Page</a>
 
 <main>
     <h1><%= title %></h1>
     <% if (user?.profile.avatar) { %>
-      <a href="/pollfiles/<%= user?.profile._id %>">
+      <a href="/profiles/<%= user?.profile._id %>">
           <div>
               <img
               src="<%= user.profile.avatar %>"
@@ -15,7 +15,7 @@
           </div>
       </a>
     <% } %>
-    <h4>Created polls will be posted both in your Pollfile to be edited and the main Poll Page for others to vote!</h4>
+    <h4>Created polls will be posted both in your Profile to be edited and the main Poll Page for others to vote!</h4>
     <form id="new-form" action="/polls" method="POST">
       <div>
         <label class="new-label" for="question-input">Question:</label>

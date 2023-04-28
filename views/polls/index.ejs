@@ -5,7 +5,7 @@
 <main>
     <h1>Poll Page </h1>
     <% if (user?.profile.avatar) { %>
-        <a href="/pollfiles/<%= user?.profile._id %>">
+        <a href="/profiles/<%= user?.profile._id %>">
             <div>
                 <img
                 src="<%= user.profile.avatar %>"

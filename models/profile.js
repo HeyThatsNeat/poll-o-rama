@@ -9,7 +9,7 @@ const profileSchema = new Schema({
 }, {
   timestamps: true
 })
-// console.log(JSON.stringify(profileSchema, null, 2));
+
 
 const Profile = mongoose.model('Profile', profileSchema)
 

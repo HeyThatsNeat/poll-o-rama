@@ -6,7 +6,7 @@ function index(req, res) {
     .populate('polls')
     .then(profiles => {
         console.log("USER",req.user);
-        res.render(`pollfiles/index`, {
+        res.render(`profiles/index`, {
             profiles: profiles,
             title: "Pollfile",
         })
@@ -18,11 +18,11 @@ function index(req, res) {
 }
 
 function show(req, res) {
-    Profile.findById(req.params.pollfileId)
+    Profile.findById(req.params.profileId)
     .populate('polls')
     .then(profile => {
         console.log("MY POLLS",profile),
-        res.render('pollfiles/show', {
+        res.render('profiles/show', {
             polls: profile.polls,
             title: "Pollfile"
         })
@@ -35,8 +35,7 @@ function show(req, res) {
 
 function deletePoll(req, res) {
     req.body.owner = req.user.profile._id
-    console.log("REQ.USER.PROFILEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE",req.params.pollfileId)
-    Profile.findById(req.params.pollfileId)
+    Profile.findById(req.params.profileId)
     .populate("polls")
     .then(profile =>{
         console.log("REQ.PARAMS.PROFILE.POLLSzzzzzzzzzzzzzzzzzz",req.params)
@@ -46,7 +45,7 @@ function deletePoll(req, res) {
                 profile.polls.remove(poll.id)
                 profile.save()
                 .then(() => {
-                    res.redirect(`/pollfiles/${req.user.profile._id}`)
+                    res.redirect(`/profiles/${req.user.profile._id}`)
                 })
                 .catch(error => {
                     console.log(error)
@@ -71,7 +70,7 @@ function edit (req, res) {
     .then(profile => {
         Poll.findById(req.params.pollId)
         .then(poll => {
-            res.render(`pollfiles/edit`, {
+            res.render(`profiles/edit`, {
                 profile,
                 poll,
                 title: 'Edit Poll'
@@ -79,7 +78,7 @@ function edit (req, res) {
         })
         .catch(err => {
             console.log(err)
-            res.redirect(`/pollfiles/${req.user.profile._id}`)
+            res.redirect(`/profiles/${req.user.profile._id}`)
         })
     })
 }
@@ -94,12 +93,12 @@ function update(req, res) {
     .then(profile => {
         Poll.findByIdAndUpdate(req.params.pollId, req.body, {new: true})
         .then(poll => {
-            res.redirect(`/pollfiles/${req.user.profile._id}`)
+            res.redirect(`/profiles/${req.user.profile._id}`)
         })
     })
     .catch(error => {
         console.log(error)
-        res.redirect(`/pollfiles/${req.user.profile._id}`)
+        res.redirect(`/profiles/${req.user.profile._id}`)
     })
 }
 
