@@ -1,29 +1,34 @@
 # **Poll-O-Rama**
-![Poll-O-Rama preview](./css/pictures/readme-game.png)
-Starry Knight is a video game inspired by turn-based old-school games like Final Fantasy and Pokemon. This game takes you on a story-based journey through a sequence of menus. You press the fight button to attack your enemy until one of you (hopefully not you) gets knocked out. The combat log at the bottom shows you what is happening during the fight. If you lose all your health points, a game-over screen will appear. If you win, a congratulations screen appears, and you move on to the next scene. You get stronger the farther you go into the game, but your enemies do as well.
-Starry Knight is about a Knight who has lost all their stars to the forces of evil, and the Knight must defeat them to get their stars back.
+![Poll-O-Rama preview](/public/pictures/Poll-o-rama-Readme-picture.png)
+Poll-O-Rama is a poll taking and creating website inspired by my odd fascination of polls. Polls were something simple to pass the time when I was in highschool, so hopefully you'll find as much enjoyment taking polls as I did growing up! This website is entirely user based, so any polls you see were made by another user. You also get your very own "Pollfile" page where you can create, edit, and delete your freshly made polls. Once you answer a poll on the main "Poll Page", you will see how many people have answered the poll as well.
 
-# **[Play Starry Knight Here!](https://hunter-eckhoff-starry-knight.netlify.app/ "Click here to play Starry Knight")**
+# **[Enter Poll-O-Rama Here!](https://poll-o-rama.fly.dev "Click here to hop in Poll-O-Rama!")**
+
+Also [click here](https://trello.com/b/1c7AbXkd/poll-o-rama) to see my planning process.
 
 ## Technologies used
 * JavaScript
-* HTML
+* EJS
 * CSS
 * Git
+* Mongoose
+* MongoDB
+* Google's OAuth 2.0
+* Fly.io
+* Express
+* Node.js
+
 
 ---
 
 ## Credits
-* Here is a list of [attributions](https://github.com/HeyThatsNeat/Stary-Knight/blob/main/attributions.md) that played a big part in this project.
+* The [favicon](https://thenounproject.com/icon/poll-4323211/) was made by [Satawat Anukul](https://thenounproject.com/satawat_ui/).
 
 ---
 
 ## Coming Soon
-* More options to fight and interact in the battle.
-* A longer storyline.
-* Animations, animations, and more animations! (including enemy attack animations)
-* Mobile responsiveness.
-* HP bars.
-* Reset health on campfire.
-* Tweak damage and hp points to find a fine balance.
-* More personalized win message.
+* Displaying a poll's results.
+* Like and dislike buttons.
+* Animations.
+* A comment section.
+* More profile customization.
