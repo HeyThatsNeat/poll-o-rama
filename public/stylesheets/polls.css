@@ -161,10 +161,12 @@ button[type="submit"] {
   position: relative;
   background-color: #e9a2ad;
   color: #293845;
-  font-size: 70%;
+  font-size: 100%;
   display: block;
+  padding: 10px 20px;
   margin-top: 40px;
   margin-bottom: 40px;
+  font-weight: 600;
   justify-content: center;
   justify-self: center;
   align-items: center;
@@ -191,7 +193,7 @@ button[type="submit"] {
 
 #add-poll-button, #save-poll-button {
   position: relative;
-  left: 350px;
+  left: 407px;
   top: 0px;
   background-color: #fdf3d3;
   color: #293845;
@@ -256,6 +258,7 @@ textarea {
   border-color: #293845;
   border-width: 3px;
   overflow-y: auto;
+  font-size: large;
 }
 
 .textarea[contenteditable]:empty::before {
@@ -358,6 +361,7 @@ textarea {
   border-color: #293845;
   border-width: 3px;
   text-align: left;
+  margin-bottom: 60px;
 }
 
 .poll-on-index-page-content-answered {
@@ -374,9 +378,9 @@ textarea {
 
 .poll-question-content {
   max-width: 87%;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   margin-left: 7%;
-  margin-top: 30px;
+  margin-top: 50px;
   word-wrap: break-word;
   text-align: start;
 }
