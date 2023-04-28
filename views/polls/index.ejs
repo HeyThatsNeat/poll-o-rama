@@ -18,45 +18,45 @@
 <div class="poll-on-index-page">
     <% polls.forEach((poll) => { %>
         <% if ( !poll.answeredBy.includes(user.profile._id) ) {%>
-        <div class="poll-on-index-page-content">
-            <p class="poll-question-content">
-                <span>Question: </span>
-                <%= poll.question %>
-            </p>
-            <form id="index-polls-form" action="/polls/<%= poll.id %>" method="POST">
-                <input class="radio" type="radio" id="answer1-input-<%= poll.id %>" name="answerRadio-<%= poll.id %>" value="1">
-                <label class="answer1" for="answer1-input-<%= poll.id %>">
-                    <p class="answer1">
-                        <span>answer1: </span>
-                        <%= poll.answer1 %>
-                    </p>
-                </label>
-                <input class="radio" type="radio" id="answer2-input-<%= poll.id %>" name="answerRadio-<%= poll.id %>" value="2">
-                <label class="answer2" for="answer2-input-<%= poll.id %>">
-                    <p class="answer2">
-                        <span>answer2: </span>
-                        <%= poll.answer2 %>
-                    </p>
-                </label>
-                <input class="radio" type="radio" id="answer3-input-<%= poll.id %>" name="answerRadio-<%= poll.id %>" value="3">
-                <label class="answer3" for="answer3-input-<%= poll.id %>">
-                    <p class="answer3">
-                        <span>answer3: </span>
-                        <%= poll.answer3 %>
-                    </p>
-                </label>
-                <input class="radio" type="radio" id="answer4-input-<%= poll.id %>" name="answerRadio-<%= poll.id %>" value="4">
-                <label class="answer4" for="answer4-input-<%= poll.id %>">
-                    <p class="answer4">
-                        <span>answer4: </span>
-                        <%= poll.answer4 %>
-                    </p>
-                </label>
-                <div id="submit-poll-button-div">
-                    <button id="submit-poll-answer" type="submit">Submit Answer</button>
-                </div>
-            </form>
-        </div>
+            <div class="poll-on-index-page-content">
+                <p class="poll-question-content">
+                    <span>Question: </span>
+                    <%= poll.question %>
+                </p>
+                <form id="index-polls-form" action="/polls/<%= poll.id %>" method="POST">
+                    <input class="radio" type="radio" id="answer1-input-<%= poll.id %>" name="answerRadio-<%= poll.id %>" value="1">
+                    <label class="answer1" for="answer1-input-<%= poll.id %>">
+                        <p class="answer1">
+                            <span>answer1: </span>
+                            <%= poll.answer1 %>
+                        </p>
+                    </label>
+                    <input class="radio" type="radio" id="answer2-input-<%= poll.id %>" name="answerRadio-<%= poll.id %>" value="2">
+                    <label class="answer2" for="answer2-input-<%= poll.id %>">
+                        <p class="answer2">
+                            <span>answer2: </span>
+                            <%= poll.answer2 %>
+                        </p>
+                    </label>
+                    <input class="radio" type="radio" id="answer3-input-<%= poll.id %>" name="answerRadio-<%= poll.id %>" value="3">
+                    <label class="answer3" for="answer3-input-<%= poll.id %>">
+                        <p class="answer3">
+                            <span>answer3: </span>
+                            <%= poll.answer3 %>
+                        </p>
+                    </label>
+                    <input class="radio" type="radio" id="answer4-input-<%= poll.id %>" name="answerRadio-<%= poll.id %>" value="4">
+                    <label class="answer4" for="answer4-input-<%= poll.id %>">
+                        <p class="answer4">
+                            <span>answer4: </span>
+                            <%= poll.answer4 %>
+                        </p>
+                    </label>
+                    <div id="submit-poll-button-div">
+                        <button id="submit-poll-answer" type="submit">Submit Answer</button>
+                    </div>
+                </form>
+            </div>
         <% } else { %>
             <div class="poll-on-index-page-content-answered">
                 <p class="poll-question-content">
@@ -96,8 +96,8 @@
         <% } %>
     <% }) %>
 </div>
-    
-    <a href="/polls/new" class="create-poll-link">Create Poll
-    </a>
-    
-    <%- include('../partials/footer.ejs') %>
+
+<a href="/polls/new" class="create-poll-link">Create Poll
+</a>
+
+<%- include('../partials/footer.ejs') %>

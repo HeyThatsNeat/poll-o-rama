@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="/stylesheets/polls.css" />
 <%- include('../partials/profiles-nav.ejs') %>
 
-<main><% console.log("USER OBJECT IN VIEWS", user); %>
+<main>
     <h1><%= user.profile.name + "'s Polls!"%></h1>
     <% if (!user.profile.polls) {%>
         <h2>You haven't made any polls yet!</br>Click the "Create Poll" link on the left to create one!</h2>

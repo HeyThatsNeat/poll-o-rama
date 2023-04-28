@@ -5,7 +5,6 @@ function index(req, res) {
     Profile.findById(req.user.profile)
     .populate('polls')
     .then(profiles => {
-        console.log("USER",req.user);
         res.render(`profiles/index`, {
             profiles: profiles,
             title: "Pollfile",
@@ -21,14 +20,13 @@ function show(req, res) {
     Profile.findById(req.params.profileId)
     .populate('polls')
     .then(profile => {
-        console.log("MY POLLS",profile),
         res.render('profiles/show', {
             polls: profile.polls,
-            title: "Pollfile"
+            title: "Pollfile",
         })
     })
-    .catch(err => {
-        console.log(err)
+    .catch(error => {
+        console.log(error)
         res.redirect('/')
     })
 }
@@ -38,24 +36,22 @@ function deletePoll(req, res) {
     Profile.findById(req.params.profileId)
     .populate("polls")
     .then(profile =>{
-        console.log("REQ.PARAMS.PROFILE.POLLSzzzzzzzzzzzzzzzzzz",req.params)
         Poll.findById(profile.polls)
         .then(poll => {
-                console.log("POOOOOOOOOOOOOOOOOOOLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL ----finds the first poll and deletes it. I want to find the one i clicked on and the delete it.........",poll.id)
-                profile.polls.remove(poll.id)
-                profile.save()
-                .then(() => {
-                    res.redirect(`/profiles/${req.user.profile._id}`)
-                })
-                .catch(error => {
-                    console.log(error)
-                    res.redirect('/')
-                })
+            profile.polls.remove(poll.id)
+            profile.save()
+            .then(() => {
+                res.redirect(`/profiles/${req.user.profile._id}`)
             })
             .catch(error => {
                 console.log(error)
                 res.redirect('/')
             })
+        })
+        .catch(error => {
+            console.log(error)
+            res.redirect('/')
+        })
     })
     .catch(error => {
         console.log(error)
@@ -64,7 +60,6 @@ function deletePoll(req, res) {
 }
 
 function edit (req, res) {
-    console.log("EDITTTTT REQ.PARAMS.POLLID",req.params.pollId)
     Profile.findById(req.params.pollId)
     .populate("polls")
     .then(profile => {
@@ -73,13 +68,17 @@ function edit (req, res) {
             res.render(`profiles/edit`, {
                 profile,
                 poll,
-                title: 'Edit Poll'
+                title: 'Edit Poll',
             })
         })
-        .catch(err => {
-            console.log(err)
+        .catch(error => {
+            console.log(error)
             res.redirect(`/profiles/${req.user.profile._id}`)
         })
+    })
+    .catch(error => {
+        console.log(error)
+        res.redirect(`/profiles/${req.user.profile._id}`)
     })
 }
 
@@ -95,13 +94,16 @@ function update(req, res) {
         .then(poll => {
             res.redirect(`/profiles/${req.user.profile._id}`)
         })
+        .catch(error => {
+            console.log(error)
+            res.redirect(`/profiles/${req.user.profile._id}`)
+        })
     })
     .catch(error => {
         console.log(error)
         res.redirect(`/profiles/${req.user.profile._id}`)
     })
 }
-
 
 export {
     index,
