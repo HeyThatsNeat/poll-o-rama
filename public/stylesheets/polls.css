@@ -55,6 +55,8 @@ img {
   right: 1%;
   font-size: 130%;
   font-weight: 600;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.50);
+  transition: 0.2s all;
   text-decoration: none;
   background-color: #e9a2ad;
   padding: 8px 12px;
@@ -67,6 +69,8 @@ img {
   right: 8%;
   top: 10px;
   font-size: 130%;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.50);
+  transition: 0.2s all;
   font-weight: 600;
   text-decoration: none;
   background-color: #e9a2ad;
@@ -81,6 +85,8 @@ img {
   top: 9px;
   font-size: 130%;
   font-weight: 600;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.50);
+  transition: 0.2s all;
   text-decoration: none;
   background-color: #e9a2ad;
   padding: 8px 12px;
@@ -99,6 +105,8 @@ img {
   align-self: center;
   align-content: center;
   bottom: 25px;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.50);
+  transition: 0.2s all;
   font-size: 100%;
   font-weight: 600;
   text-decoration: none;
@@ -114,6 +122,8 @@ img {
   font-size: 130%;
   font-weight: 600;
   text-decoration: none;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.50);
+  transition: 0.2s all;
   background-color: #e9a2ad;
   padding: 8px 12px;
   border-radius: 5px;
@@ -152,6 +162,8 @@ button[type="submit"] {
   padding: 12px 24px;
   left: 0;
   top: 0;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.50);
+  transition: 0.2s all;
   border: none;
   cursor: pointer;
   border-radius: 5px;
@@ -167,6 +179,8 @@ button[type="submit"] {
   margin-top: 40px;
   margin-bottom: 40px;
   font-weight: 600;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.50);
+  transition: 0.2s all;
   justify-content: center;
   justify-self: center;
   align-items: center;
@@ -198,10 +212,23 @@ button[type="submit"] {
   top: 0px;
   background-color: #fdf3d3;
   color: #293845;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.50);
+  transition: 0.2s all;
   font-size: 130%;
   font-weight: 600;
   margin-top: 10px;
   margin-bottom: 35px;
+}
+
+#add-poll-button:active,  #save-poll-button:active,
+button[id^="delete-button"]:active, button[type="submit"],
+#submit-poll-answer:active, .edit-poll-link:active,
+.profile-link:active, .polls-link-create-page:active,
+.create-poll-link:active, .polls-link:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
 }
 
 form[id^="delete-form-"] {
@@ -225,6 +252,8 @@ button[id^="delete-button"] {
   justify-content: end;
   align-items: end;
   align-self: end;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.50);
+  transition: 0.2s all;
   align-content: end;
   justify-items: end;
   justify-self: end;
