@@ -11,6 +11,8 @@ router.get('/new', pollsCtrl.new)
 
 router.post('/', isLoggedIn, pollsCtrl.create)
 
+router.post('/:pollId', pollsCtrl.createAnswer)
+
 export {
     router,
 }

@@ -89,8 +89,35 @@ function create(req, res) {
     })
 }
 
+function createAnswer(req, res) {
+    console.log("UPDATE REQ.PARAMS.POLLIDDDDDDDD",req.params.pollId)
+    console.log("REQ.BODYYYYYYY",req.body)
+    Poll.findById(req.params.pollId)
+    .then(poll => {
+        console.log("POLLLLLLLLLLLLLLLL",poll)
+        poll.responses.push(req.body)
+        console.log("REQ.USER.PROFILEEEEEEEEEE",req.user.profile)
+        poll.answeredBy.push(req.user.profile)
+        poll.save()
+        .then(() => {
+            console.log("POLLLLL.RESPONSESSSSSSS",poll.responses)
+            console.log("POLLLLLLLLLLLL AFTER SAVEEEE",poll)
+            res.redirect('/polls')
+        })
+        .catch(error => {
+            console.log(error)
+            res.redirect('/')
+        })
+    })
+    .catch(error => {
+        console.log(error)
+        res.redirect('/')
+    })
+}
+
 export {
     index,
     create,
     newPoll as new,
+    createAnswer,
 }

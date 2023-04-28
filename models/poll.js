@@ -3,10 +3,7 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const responseSchema = new Schema({
-    responseAnswer1: [Boolean],
-    responseAnswer2: [Boolean],
-    responseAnswer3: [Boolean],
-    responseAnswer4: [Boolean],
+    responseNumber: String,
     profile: { type: Schema.Types.ObjectId, ref: 'Profile' },
 }, {
     timestamps: true
@@ -21,6 +18,7 @@ const pollSchema = new Schema({
     answered: Boolean,
     owner: { type: Schema.Types.ObjectId, ref: 'Profile' },
     responses: [responseSchema],
+    answeredBy: [{ type: Schema.Types.ObjectId, ref: 'Profile' }],
 }, {
     timestamps: true,
 })
