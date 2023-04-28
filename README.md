@@ -23,7 +23,7 @@ Also [click here](https://trello.com/b/1c7AbXkd/poll-o-rama) to see my planning 
 
 ## Credits
 * The [favicon](https://thenounproject.com/icon/poll-4323211/) was made by [Satawat Anukul](https://thenounproject.com/satawat_ui/).
-
+* The [select answer "buttons" and style of the "buttons"](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio#validation) were made possible by [MDN](https://developer.mozilla.org/en-US/).
 ---
 
 ## Coming Soon
