@@ -17,6 +17,10 @@
 </main>
 <div class="poll-on-index-page">
     <% polls.forEach((poll) => { %>
+        <% let total1 = [] %>
+        <% let total2 = [] %>
+        <% let total3 = [] %>
+        <% let total4 = [] %>
         <% if (!poll.answeredBy.includes(user.profile._id)) {%>
             <div class="poll-on-index-page-content">
                 <% if (poll.owner._id.equals(user.profile._id)) { %>
@@ -79,24 +83,55 @@
                         <span>answer1: </span>
                         <%= poll.answer1 %>
                     </p>
+                    <p class="total-votes-p-tag">
+                        <% poll.responses.forEach(responseObj => { %>
+                            <% if (responseObj.responseNumber == 1) { %>
+                                <% total1.push(responseObj.responseNumber)%>
+                            <% } %>
+                        <% }) %> 
+                        <%= total1.length %>
+                        <% console.log("TOTAL1.LENGTH",total1.length) %>
+                    </p>
                 </label>
                 <label class="answer2" for="answer2-input-<%= poll.id %>">
                     <p class="answer2">
                         <span>answer2: </span>
                         <%= poll.answer2 %>
                     </p>
+                    
+                    <% poll.responses.forEach(responseObj => { %>
+                        <% if (responseObj.responseNumber == 2) { %>
+                            <% total2.push(responseObj.responseNumber)%>
+                        <% } %>
+                    <% }) %> 
+                    <%= total2.length %>
+                        <% console.log("TOTAL2.LENGTH",total2.length) %>
                 </label>
                 <label class="answer3" for="answer3-input-<%= poll.id %>">
                     <p class="answer3">
                         <span>answer3: </span>
                         <%= poll.answer3 %>
                     </p>
+                    <% poll.responses.forEach(responseObj => { %>
+                        <% if (responseObj.responseNumber == 3) { %>
+                            <% total3.push(responseObj.responseNumber)%>
+                        <% } %>
+                    <% }) %> 
+                    <%= total3.length %>
+                        <% console.log("TOTAL3.LENGTH",total3.length) %> 
                 </label>
                 <label class="answer4" for="answer4-input-<%= poll.id %>">
                     <p class="answer4">
                         <span>answer4: </span>
                         <%= poll.answer4 %>
                     </p>
+                    <% poll.responses.forEach(responseObj => { %>
+                        <% if (responseObj.responseNumber == 4) { %>
+                            <% total4.push(responseObj.responseNumber)%>
+                        <% } %>
+                    <% }) %> 
+                    <%= total4.length %>
+                        <% console.log("TOTAL4.LENGTH",total4.length) %>
                 </label>
                 <div class="num-people-answered">
                     <p>
@@ -113,3 +148,4 @@
 </a>
 
 <%- include('../partials/footer.ejs') %>
+
