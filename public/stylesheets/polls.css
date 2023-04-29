@@ -226,7 +226,7 @@ button[type="submit"] {
 #submit-poll-answer:active, .edit-poll-link:active,
 .profile-link:active, .polls-link-create-page:active,
 .create-poll-link:active, .polls-link:active, 
-#edit-button:active {
+#edit-button:active, #edit-form:active {
   transform: scale(0.98);
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
@@ -242,6 +242,19 @@ button[type="submit"] {
   background-color: rgba(44, 161, 20, 0);
   margin: 0;
   padding: 0 -50px;
+}
+#edit-form {
+  position: relative;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  left: 0%;
+  width: 99%;
+  top: 8px;
+  background-color: rgba(44, 161, 20, 0);
+  margin: 0;
+  padding: 0 -50px;
+  z-index: 2;
 }
 
 #delete-button {

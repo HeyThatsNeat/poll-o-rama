@@ -20,7 +20,7 @@
         <% if (!poll.answeredBy.includes(user.profile._id)) {%>
             <div class="poll-on-index-page-content">
                 <% if (poll.owner._id.equals(user.profile._id)) { %>
-                    <a id="delete-form" href="polls/<%= poll._id %>/edit">
+                    <a id="edit-form" href="polls/<%= poll._id %>/edit">
                         <button id="edit-button" type="submit">Edit Poll</button>
                     </a>
                     <form id="delete-form" action="/polls/<%= poll._id %>?_method=DELETE" method="POST">

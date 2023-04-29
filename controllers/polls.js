@@ -92,6 +92,7 @@ function deletePoll(req, res) {
 }
 
 function edit(req, res) {
+    console.log("WORKINGGINGGG")
     Poll.findById(req.params.pollId)
     .then(poll => {
         res.render('polls/edit', {

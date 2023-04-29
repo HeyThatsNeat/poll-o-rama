@@ -20,7 +20,7 @@
     <div class="poll-on-profile-page">
         <% polls.forEach((poll) => { %>
             <div class="poll-on-index-page-content">
-                <form id="delete-form-<%= poll.id %>" action="/polls/<%= poll._id %>?_method=DELETE" method="POST">
+                <form id="delete-form" action="/polls/<%= poll._id %>?_method=DELETE" method="POST">
                     <button id="delete-button" type="submit">Delete Poll</button>
                 </form>
                 <p class="poll-question-content">
@@ -55,7 +55,7 @@
                         <%= poll.answer4 %>
                     </p>
                 </label>
-                <a class="edit-poll-link" href="/profiles/<%= user?.profile._id %>/<%= poll.id %>/edit">Edit Poll</a>
+                <a class="edit-poll-link" href="/polls/<%= poll._id %>/edit">Edit Poll</a>
             </div>
         <% }) %>
     </div>
