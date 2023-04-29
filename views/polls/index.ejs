@@ -19,8 +19,8 @@
     <% polls.forEach((poll) => { %>
         <% if (!poll.answeredBy.includes(user.profile._id)) {%>
             <div class="poll-on-index-page-content">
-                <% if (poll.owner.name === user.profile.name) { %>
-                    <form id="delete-form-<%= poll.id %>" action="/polls/<%= poll.id %>?_method=DELETE" method="POST">
+                <% if (poll.owner._id.equals(user.profile._id)) { %>
+                    <form id="delete-form-<%= poll.id %>" action="/polls/<%= poll._id %>?_method=DELETE" method="POST">
                         <button id="delete-button-<%= poll.id %>" type="submit">Delete Poll</button>
                     </form>
                 <% } %>
@@ -29,28 +29,28 @@
                     <%= poll.question %>
                 </p>
                 <form id="index-polls-form" action="/polls/<%= poll.id %>" method="POST">
-                    <input class="radio" type="radio" id="answer1-input-<%= poll.id %>" name="answerRadio-<%= poll.id %>" value="1">
+                    <input class="radio" type="radio" id="answer1-input-<%= poll.id %>" name="responseNumber" value="1">
                     <label class="answer1" for="answer1-input-<%= poll.id %>">
                         <p class="answer1">
                             <span>answer1: </span>
                             <%= poll.answer1 %>
                         </p>
                     </label>
-                    <input class="radio" type="radio" id="answer2-input-<%= poll.id %>" name="answerRadio-<%= poll.id %>" value="2">
+                    <input class="radio" type="radio" id="answer2-input-<%= poll.id %>" name="responseNumber" value="2">
                     <label class="answer2" for="answer2-input-<%= poll.id %>">
                         <p class="answer2">
                             <span>answer2: </span>
                             <%= poll.answer2 %>
                         </p>
                     </label>
-                    <input class="radio" type="radio" id="answer3-input-<%= poll.id %>" name="answerRadio-<%= poll.id %>" value="3">
+                    <input class="radio" type="radio" id="answer3-input-<%= poll.id %>" name="responseNumber" value="3">
                     <label class="answer3" for="answer3-input-<%= poll.id %>">
                         <p class="answer3">
                             <span>answer3: </span>
                             <%= poll.answer3 %>
                         </p>
                     </label>
-                    <input class="radio" type="radio" id="answer4-input-<%= poll.id %>" name="answerRadio-<%= poll.id %>" value="4">
+                    <input class="radio" type="radio" id="answer4-input-<%= poll.id %>" name="responseNumber" value="4">
                     <label class="answer4" for="answer4-input-<%= poll.id %>">
                         <p class="answer4">
                             <span>answer4: </span>

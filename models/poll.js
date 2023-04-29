@@ -23,6 +23,7 @@ const pollSchema = new Schema({
     timestamps: true,
 })
 
+
 const Poll = mongoose.model('Poll', pollSchema)
 
 export {

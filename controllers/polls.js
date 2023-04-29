@@ -3,8 +3,9 @@ import { Profile } from "../models/profile.js";
 
 function index(req, res) {
     Poll.find({})
-    .populate('owner')
+    // .populate('owner')
     .then(polls => {
+        console.log("POLL",polls)
         res.render('polls/index', {
             polls,
             title: "polls",
@@ -24,8 +25,7 @@ function newPoll(req, res) {
 
 function create(req, res) {
     req.body.owner = req.user.profile._id
-    Profile.findById(req.user.profile)
-    .populate("polls")
+    Profile.findById(req.body.owner)
     .then(profile =>{
         Poll.create(req.body)
         .then(poll => {
@@ -53,6 +53,7 @@ function create(req, res) {
 function createAnswer(req, res) {
     Poll.findById(req.params.pollId)
     .then(poll => {
+        req.body.profile = req.user.profile._id
         poll.responses.push(req.body)
         poll.answeredBy.push(req.user.profile)
         poll.save()
@@ -73,11 +74,13 @@ function createAnswer(req, res) {
 function deletePoll(req, res) {
     Poll.findByIdAndDelete(req.params.pollId)
         .then(poll => {
+            console.log("REQ.PARAMS.POLLID",req.params.pollId)
+            console.log("POLLL",poll)
             res.redirect('/polls')
         })
     .catch(err => {
-    console.log(err)
-    res.redirect('/polls')
+        console.log(err)
+        res.redirect('/polls')
     })
 }
 
