@@ -65,7 +65,10 @@
             </div>
         <% } else { %>
             <div class="poll-on-index-page-content-answered">
-                <% if (poll.owner.name === user.profile.name) { %>
+                <% if (poll.owner._id.equals(user.profile._id)) { %>
+                    <a href="polls/<%= poll._id %>/edit">
+                        <button id="edit-button" type="submit">Edit Poll</button>
+                    </a>
                     <form id="delete-form-<%= poll.id %>" action="/polls/<%= poll.id %>?_method=DELETE" method="POST">
                         <button id="delete-button-<%= poll.id %>" type="submit">Delete Poll</button>
                     </form>

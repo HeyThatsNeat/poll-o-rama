@@ -73,11 +73,36 @@ function createAnswer(req, res) {
 
 function deletePoll(req, res) {
     Poll.findByIdAndDelete(req.params.pollId)
-        .then(poll => {
-            console.log("REQ.PARAMS.POLLID",req.params.pollId)
-            console.log("POLLL",poll)
-            res.redirect('/polls')
+    .then(poll => {
+        console.log("REQ.PARAMS.POLLID",req.params.pollId)
+        console.log("POLLL",poll)
+        res.redirect('/polls')
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect('/polls')
+    })
+}
+
+function edit(req, res) {
+    Poll.findById(req.params.pollId)
+    .then(poll => {
+        res.render('polls/edit', {
+            title: "Edit Poll",
+            poll,
         })
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect('/polls')
+    })
+}
+
+function update(req, res) {
+    Poll.findByIdAndUpdate(req.params.pollId, req.body, {new : true})
+    .then(poll => {
+        res.redirect('/polls')
+    })
     .catch(err => {
         console.log(err)
         res.redirect('/polls')
@@ -90,4 +115,6 @@ export {
     newPoll as new,
     createAnswer,
     deletePoll as delete,
+    edit,
+    update,
 }
