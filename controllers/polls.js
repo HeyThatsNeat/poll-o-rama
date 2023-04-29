@@ -74,12 +74,19 @@ function createAnswer(req, res) {
 function deletePoll(req, res) {
     Poll.findByIdAndDelete(req.params.pollId)
     .then(poll => {
-        console.log("REQ.PARAMS.POLLID",req.params.pollId)
-        console.log("POLLL",poll)
-        res.redirect('/polls')
+        Profile.findById(poll.owner._id)
+        .then(profile => {
+            profile.polls.remove(poll)
+            profile.save()
+            res.redirect('/polls')
+        })
+        .catch(error => {
+            console.log(error)
+            res.redirect('/polls')
+        })
     })
-    .catch(err => {
-        console.log(err)
+    .catch(error => {
+        console.log(error)
         res.redirect('/polls')
     })
 }

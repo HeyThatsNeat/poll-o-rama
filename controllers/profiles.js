@@ -4,9 +4,9 @@ import { Poll } from "../models/poll.js"
 function index(req, res) {
     Profile.findById(req.user.profile)
     .populate('polls')
-    .then(profiles => {
+    .then(profile => {
         res.render(`profiles/index`, {
-            profiles: profiles,
+            profile: profile,
             title: "Pollfile",
         })
     })
@@ -23,34 +23,6 @@ function show(req, res) {
         res.render('profiles/show', {
             polls: profile.polls,
             title: "Pollfile",
-        })
-    })
-    .catch(error => {
-        console.log(error)
-        res.redirect('/')
-    })
-}
-
-function deletePoll(req, res) {
-    req.body.owner = req.user.profile._id
-    Profile.findById(req.params.profileId)
-    .populate("polls")
-    .then(profile =>{
-        Poll.findById(profile.polls)
-        .then(poll => {
-            profile.polls.remove(poll.id)
-            profile.save()
-            .then(() => {
-                res.redirect(`/profiles/${req.user.profile._id}`)
-            })
-            .catch(error => {
-                console.log(error)
-                res.redirect('/')
-            })
-        })
-        .catch(error => {
-            console.log(error)
-            res.redirect('/')
         })
     })
     .catch(error => {
