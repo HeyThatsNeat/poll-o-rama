@@ -15,29 +15,45 @@
         </a>
     <% } %>
     <div class="poll-roulette-container">
-        <p><span>Question: </span>Select a random profile to visit!</p>
+        <p><span>Question: </span>Which random profile would you like to visit?</p>
         <div class="options">
-            <input type="radio" id="option1">
+            <input type="radio" id="option1" name="response">
             <label for="option1">
                 <span>Option 1: </span>
+                <% let profile1 = Math.floor(Math.random() * profiles.length) %>
+                <a href="/profiles/<%= profiles[profile1]._id %>">
+                    <%= profiles[profile1].name %>
+                </a>
             </label>
         </div>
         <div class="options">
-            <input type="radio" id="option2">
+            <input type="radio" id="option2" name="response">
             <label for="option2">
                 <span>Option 2: </span>
+                <% let profile2 = Math.floor(Math.random() * profiles.length) %>
+                <a href="/profiles/<%= profiles[profile2]._id %>">
+                    <%= profiles[profile2].name %>
+                </a>
             </label>
         </div>
         <div class="options">
-            <input type="radio" id="option3">
+            <input type="radio" id="option3" name="response">
             <label for="option3">
                 <span>Option 3: </span>
+                <% let profile3 = Math.floor(Math.random() * profiles.length) %>
+                <a href="/profiles/<%= profiles[profile3]._id %>">
+                    <%= profiles[profile3].name %>
+                </a>
             </label>
         </div>
         <div class="options">
-            <input type="radio" id="option4">
+            <input type="radio" id="option4" name="response">
             <label for="option4">
                 <span>Option 4: </span>
+                <% let profile4 = Math.floor(Math.random() * profiles.length) %>
+                <a href="/profiles/<%= profiles[profile4]._id %>">
+                    <%= profiles[profile4].name %>
+                </a>
             </label>
         </div>
         <div class="poll-roulette-submit-button">

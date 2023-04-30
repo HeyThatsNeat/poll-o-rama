@@ -16,12 +16,13 @@ function index(req, res) {
 }
 
 function show(req, res) {
-    Profile.findById(req.user.profile._id)
+    Profile.findById(req.params.profileId)
     .populate('polls')
     .then(profile => {
         res.render('profiles/show', {
             polls: profile.polls,
             title: "Pollfile",
+            profile,
         })
     })
     .catch(error => {
