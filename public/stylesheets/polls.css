@@ -403,7 +403,25 @@ textarea {
   left: 30px
 }
 
-.radio:checked {
+.poll-roulette-radio-input {
+  appearance: none;
+  border-radius: 50%;
+  position: relative;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #293845;
+  transition: 0.2s all linear;
+  display: flex;
+  justify-content: start;
+  justify-self: start;
+  justify-items: start;
+  align-items: start;
+  align-self: start;
+  right: 5px;
+  top: 1px;
+}
+
+.radio:checked, .poll-roulette-radio-input:checked {
   border: 5px solid #293845;
 }
 
