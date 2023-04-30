@@ -3,7 +3,7 @@
 <%- include('../partials/profiles-nav.ejs') %>
 
 <main>
-    <h1>Poll-Roulette</h1>
+    <h1><%= title %></h1>
     <% if (user?.profile.avatar) { %>
         <a href="/profiles/<%= user?.profile._id %>">
             <div>

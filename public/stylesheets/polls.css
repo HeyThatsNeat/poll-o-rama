@@ -568,6 +568,7 @@ span {
 .options {
   display: flex;
   flex-direction: row;
+  margin: 20px;
 }
 
 @media screen and (max-height: 450px) {

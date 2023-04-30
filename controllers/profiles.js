@@ -1,12 +1,12 @@
 import { Profile } from "../models/profile.js"
 
 function index(req, res) {
-    Profile.findById(req.user.profile)
+    Profile.find({})
     .populate('polls')
-    .then(profile => {
+    .then(profiles => {
         res.render(`profiles/index`, {
-            profile: profile,
-            title: "Pollfile",
+            profiles: profiles,
+            title: "Pollfile Roulette",
         })
     })
     .catch(error => {
