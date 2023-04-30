@@ -3,10 +3,7 @@
 <%- include('../partials/profiles-nav.ejs') %>
 
 <main>
-    <h1><%= user.profile.name + "'s Polls!"%></h1>
-    <% if (!user.profile.polls) {%>
-        <h2>You haven't made any polls yet!</br>Click the "Create Poll" link on the left to create one!</h2>
-    <% } %>
+    <h1>Poll-Roulette</h1>
     <% if (user?.profile.avatar) { %>
         <a href="/profiles/<%= user?.profile._id %>">
             <div>
@@ -17,6 +14,37 @@
             </div>
         </a>
     <% } %>
+    <div class="poll-roulette-container">
+        <p><span>Question: </span>Select a random profile to visit!</p>
+        <div class="options">
+            <input type="radio" id="option1">
+            <label for="option1">
+                <span>Option 1: </span>
+            </label>
+        </div>
+        <div class="options">
+            <input type="radio" id="option2">
+            <label for="option2">
+                <span>Option 2: </span>
+            </label>
+        </div>
+        <div class="options">
+            <input type="radio" id="option3">
+            <label for="option3">
+                <span>Option 3: </span>
+            </label>
+        </div>
+        <div class="options">
+            <input type="radio" id="option4">
+            <label for="option4">
+                <span>Option 4: </span>
+            </label>
+        </div>
+        <div class="poll-roulette-submit-button">
+            <button class="poll-roulette-button">Submit</button>
+        </div>
+    </div>
 </main>
+
 
 <%- include('../partials/footer.ejs') %>

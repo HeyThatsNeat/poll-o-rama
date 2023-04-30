@@ -3,9 +3,8 @@ import { Profile } from "../models/profile.js";
 
 function index(req, res) {
     Poll.find({})
-    // .populate('owner')
+    .populate('owner')
     .then(polls => {
-        console.log("POLL",polls)
         res.render('polls/index', {
             polls,
             title: "polls",
@@ -74,7 +73,7 @@ function createAnswer(req, res) {
 function deletePoll(req, res) {
     Poll.findByIdAndDelete(req.params.pollId)
     .then(poll => {
-        Profile.findById(poll.owner._id)
+        Profile.findById(req.user.profile._id)
         .then(profile => {
             profile.polls.remove(poll)
             profile.save()
@@ -92,7 +91,6 @@ function deletePoll(req, res) {
 }
 
 function edit(req, res) {
-    console.log("WORKINGGINGGG")
     Poll.findById(req.params.pollId)
     .then(poll => {
         res.render('polls/edit', {

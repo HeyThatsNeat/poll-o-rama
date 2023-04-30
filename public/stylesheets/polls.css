@@ -62,6 +62,21 @@ img {
   padding: 8px 12px;
   border-radius: 5px;
   color: #293845;
+  z-index: 1;
+}
+
+.profiles-link {
+  position: absolute;
+  right: 110px;
+  font-size: 130%;
+  font-weight: 600;
+  box-shadow: 7px 6px 11px 1px rgba(0, 0, 0, 0.50);
+  transition: 0.2s all;
+  text-decoration: none;
+  background-color: #e9a2ad;
+  padding: 8px 12px;
+  border-radius: 5px;
+  color: #293845;
 }
 
 
@@ -226,7 +241,8 @@ button[type="submit"] {
 #submit-poll-answer:active, .edit-poll-link:active,
 .profile-link:active, .polls-link-create-page:active,
 .create-poll-link:active, .polls-link:active, 
-#edit-button:active, #edit-form:active {
+#edit-button:active, #edit-form:active,
+.poll-roulette-button:active {
   transform: scale(0.98);
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
@@ -516,6 +532,42 @@ textarea {
 
 span {
   font-weight: bolder;
+}
+
+.poll-roulette-container {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #293845;
+  background-color: #fdf3d3;
+  box-shadow: 10px 10px 5px #293845;
+  padding: 50px;
+  width: 50%;
+}
+
+.poll-roulette-submit-button {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 0;
+  margin-top: 50px;
+}
+
+.poll-roulette-button {
+  background-color: #e9a2ad;
+  color: #293845;
+  padding: 8px 16px;
+  box-shadow: 7px 6px 11px 1px rgba(0, 0, 0, 0.50);
+  transition: 0.2s all;
+  border-radius: 5px;
+  border: none;
+  font-size: 130%;
+  font-weight: 600;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
 }
 
 @media screen and (max-height: 450px) {
