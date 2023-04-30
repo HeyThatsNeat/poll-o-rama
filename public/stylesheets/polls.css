@@ -65,9 +65,25 @@ img {
   z-index: 1;
 }
 
+.profile-link-profiles {
+  position: absolute;
+  right: 270px;
+  top: 8px;
+  font-size: 130%;
+  font-weight: 600;
+  box-shadow: 7px 6px 11px 1px rgba(0, 0, 0, 0.50);
+  transition: 0.2s all;
+  text-decoration: none;
+  background-color: #e9a2ad;
+  padding: 8px 12px;
+  border-radius: 5px;
+  color: #293845;
+  z-index: 1;
+}
+
 .profiles-link {
   position: absolute;
-  right: 110px;
+  right: 140px;
   font-size: 130%;
   font-weight: 600;
   box-shadow: 7px 6px 11px 1px rgba(0, 0, 0, 0.50);
@@ -587,6 +603,10 @@ span {
   display: flex;
   flex-direction: row;
   margin: 20px;
+}
+
+.option-span {
+  margin-right: 0.25em;
 }
 
 @media screen and (max-height: 450px) {
