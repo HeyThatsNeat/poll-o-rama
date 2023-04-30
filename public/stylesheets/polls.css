@@ -126,24 +126,25 @@ img {
   color: #293845;
 }
 
-.edit-poll-link{
+.edit-poll-link {
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  justify-self: center;
-  justify-items: center;
-  align-self: center;
-  align-content: center;
-  bottom: 25px;
+  justify-content: start;
+  align-items: start;
+  text-align: start;
+  justify-self: start;
+  justify-items: start;
+  align-self: start;
+  align-content: start;
+  bottom: 478px;
+  left: 7px;
   box-shadow: 7px 6px 11px 1px rgba(0, 0, 0, 0.50);
   transition: 0.2s all;
-  font-size: 100%;
+  font-size: small;
   font-weight: 600;
   text-decoration: none;
   background-color: #e9a2ad;
-  padding: 8px 12px;
+  padding: 5px 20px;
   border-radius: 5px;
   color: #293845;
 }
